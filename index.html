@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>BMI Calculator</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-slate-900 flex items-center justify-center p-4">
+
+  <div class="bg-white w-full max-w-md p-8 rounded-2xl shadow-2xl">
+
+    <!-- Title -->
+    <div class="text-center mb-8">
+
+      <h1 class="text-3xl font-bold text-slate-800">
+        BMI Calculator
+      </h1>
+
+      <p class="text-slate-500 mt-2">
+        Calculate your Body Mass Index
+      </p>
+
+    </div>
+
+
+    <!-- Weight -->
+    <div class="mb-5">
+
+      <label
+        for="weightInput"
+        class="block text-slate-700 font-semibold mb-2">
+        Weight (kg)
+      </label>
+
+      <input
+        id="weightInput"
+        type="number"
+        min="1"
+        placeholder="Enter your weight"
+        class="w-full border border-slate-300 px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-blue-500">
+
+    </div>
+
+
+    <!-- Height -->
+    <div class="mb-6">
+
+      <label class="block text-slate-700 font-semibold mb-2">
+        Height
+      </label>
+
+      <div class="flex gap-3">
+
+        <input
+          id="feetInput"
+          type="number"
+          min="1"
+          placeholder="Feet"
+          class="w-1/2 border border-slate-300 px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-blue-500">
+
+        <input
+          id="inchInput"
+          type="number"
+          min="0"
+          max="11"
+          placeholder="Inches"
+          class="w-1/2 border border-slate-300 px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-blue-500">
+
+      </div>
+
+      <p class="text-xs text-slate-400 mt-2">
+        Example: 5 feet 6 inches
+      </p>
+
+    </div>
+
+
+    <!-- Calculate Button -->
+    <button
+      id="calculateBtn"
+      class="w-full bg-blue-600 hover:bg-blue-700 active:scale-[0.98] transition text-white py-3 rounded-lg font-semibold cursor-pointer">
+      Calculate BMI
+    </button>
+
+
+    <!-- Loading -->
+    <div
+      id="loader"
+      class="hidden text-center mt-6">
+
+      <div class="flex items-center justify-center gap-2">
+
+        <span
+          id="loaderIcon"
+          class="inline-block text-2xl">
+          ⏳
+        </span>
+
+        <span class="text-blue-600 font-semibold">
+          Calculating...
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- Result -->
+    <div
+      id="resultBox"
+      class="hidden text-center mt-6 p-5 bg-slate-50 rounded-xl">
+
+      <p
+        id="result"
+        class="text-3xl font-bold text-slate-800">
+      </p>
+
+      <p
+        id="category"
+        class="text-lg font-semibold text-slate-500 mt-2">
+      </p>
+
+    </div>
+
+
+  </div>
+
+
+  <script src="app.js"></script>
+
+</body>
+
+</html>
